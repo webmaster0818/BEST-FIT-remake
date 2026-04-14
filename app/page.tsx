@@ -1,228 +1,185 @@
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[var(--background)]">
+      {/* Header */}
+      <header className="sticky top-0 z-50 glass border-b border-[var(--border)]">
+        <div className="container mx-auto px-4 py-3 flex items-center justify-between">
+          <a href="/" className="text-2xl font-bold tracking-tight">
+            <span className="text-gradient">BEST-FIT</span>
+          </a>
+          <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-[var(--text-muted)]">
+            <a href="#area" className="hover:text-[var(--primary)] transition-colors">エリア</a>
+            <a href="#search" className="hover:text-[var(--primary)] transition-colors">検索</a>
+            <a href="#features" className="hover:text-[var(--primary)] transition-colors">特徴</a>
+            <a href="#articles" className="hover:text-[var(--primary)] transition-colors">記事</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSd2cWgzmTOvbmfPs2bLd-H-yUQZqxt4fY46GK49p49uh50y7w/viewform" target="_blank" rel="noopener noreferrer" className="btn-primary text-white px-5 py-2 rounded-full text-sm">
+              掲載依頼
+            </a>
+          </nav>
+        </div>
+      </header>
+
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-r from-blue-500 to-blue-600 text-white">
-        <div className="container mx-auto px-4 py-24 text-center">
-          <div className="max-w-4xl mx-auto">
-            <p className="text-xl mb-2">
-              <span className="font-bold">パーソナルジムの</span>
-              <span className="mx-2 font-bold text-yellow-300">比較</span>
-              <span className="mx-2 font-bold text-yellow-300">口コミ</span>
-              <span className="mx-2 font-bold text-yellow-300">予約</span>
-              <span className="font-bold">サイト</span>
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, #1E3A8A 0%, #2563EB 40%, #7C3AED 100%)' }} />
+        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 20% 80%, white 0%, transparent 40%), radial-gradient(circle at 80% 20%, white 0%, transparent 40%)' }} />
+        <div className="relative container mx-auto px-4 py-20 md:py-28 text-center text-white">
+          <div className="max-w-3xl mx-auto">
+            <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm rounded-full px-4 py-1.5 text-sm mb-6">
+              <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+              2026年4月最新 | 全国1,000店舗以上掲載
+            </div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight tracking-tight">
+              <span className="text-yellow-300">理想のカラダ</span>は<br className="md:hidden" />
+              <span className="text-yellow-300">ジム選び</span>から始まる
+            </h1>
+            <p className="text-lg md:text-xl text-white/80 mb-10 leading-relaxed">
+              パーソナルジムの比較・口コミ・予約サイト
             </p>
-            <p className="text-3xl md:text-4xl font-bold mb-8">
-              <span className="text-yellow-300">理想のカラダ</span>は<span className="text-yellow-300">ジム選び</span>から始まる
-            </p>
-          </div>
-        </div>
-      </div>
 
-      {/* Popular Area Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-8">
-            <p className="text-sm text-gray-500 mb-2">Popular Area</p>
-            <h2 className="text-2xl md:text-3xl font-bold">人気エリアのパーソナルジム特集</h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {/* 北海道 */}
-            <div>
-              <h3 className="text-gray-600 font-bold mb-2">北海道</h3>
-              <div className="flex flex-wrap gap-2">
-                <a href="/articles/city/sapporo" className="px-4 py-2 bg-white border rounded hover:bg-blue-50">札幌</a>
-              </div>
-            </div>
-
-            {/* 宮城 */}
-            <div>
-              <h3 className="text-gray-600 font-bold mb-2">宮城</h3>
-              <div className="flex flex-wrap gap-2">
-                <a href="/articles/city/sendai" className="px-4 py-2 bg-white border rounded hover:bg-blue-50">仙台</a>
-              </div>
-            </div>
-
-            {/* 東京 */}
-            <div>
-              <h3 className="text-gray-600 font-bold mb-2">東京</h3>
-              <div className="flex flex-wrap gap-2">
-                <a href="/articles/pref/tokyo" className="px-4 py-2 bg-white border rounded hover:bg-blue-50">東京</a>
-                <a href="/articles/station/shinjuku" className="px-4 py-2 bg-white border rounded hover:bg-blue-50">新宿</a>
-                <a href="/articles/station/ginza" className="px-4 py-2 bg-white border rounded hover:bg-blue-50">銀座</a>
-                <a href="/articles/station/ikebukuro" className="px-4 py-2 bg-white border rounded hover:bg-blue-50">池袋</a>
-                <a href="/articles/station/shibuya" className="px-4 py-2 bg-white border rounded hover:bg-blue-50">渋谷</a>
-                <a href="/articles/station/ebisu" className="px-4 py-2 bg-white border rounded hover:bg-blue-50">恵比寿</a>
-                <a href="/articles/station/gotanda" className="px-4 py-2 bg-white border rounded hover:bg-blue-50">五反田</a>
-                <a href="/articles/station/kinshicho" className="px-4 py-2 bg-white border rounded hover:bg-blue-50">錦糸町</a>
-                <a href="/articles/station/kichijoji" className="px-4 py-2 bg-white border rounded hover:bg-blue-50">吉祥寺</a>
-                <a href="/articles/city/tachikawa" className="px-4 py-2 bg-white border rounded hover:bg-blue-50">立川</a>
-                <a href="/articles/city/hachioji" className="px-4 py-2 bg-white border rounded hover:bg-blue-50">八王子</a>
-              </div>
-            </div>
-
-            {/* 神奈川 */}
-            <div>
-              <h3 className="text-gray-600 font-bold mb-2">神奈川</h3>
-              <div className="flex flex-wrap gap-2">
-                <a href="/articles/city/yokohama" className="px-4 py-2 bg-white border rounded hover:bg-blue-50">横浜</a>
-                <a href="/articles/station/kannai" className="px-4 py-2 bg-white border rounded hover:bg-blue-50">関内</a>
-                <a href="/articles/city/kawasaki" className="px-4 py-2 bg-white border rounded hover:bg-blue-50">川崎</a>
-                <a href="/articles/station/fujisawa" className="px-4 py-2 bg-white border rounded hover:bg-blue-50">藤沢</a>
-              </div>
-            </div>
-
-            {/* 埼玉 */}
-            <div>
-              <h3 className="text-gray-600 font-bold mb-2">埼玉</h3>
-              <div className="flex flex-wrap gap-2">
-                <a href="/articles/station/omiya" className="px-4 py-2 bg-white border rounded hover:bg-blue-50">大宮</a>
-                <a href="/articles/station/urawa" className="px-4 py-2 bg-white border rounded hover:bg-blue-50">浦和</a>
-                <a href="/articles/station/kawagoe" className="px-4 py-2 bg-white border rounded hover:bg-blue-50">川越</a>
-              </div>
-            </div>
-
-            {/* 千葉 */}
-            <div>
-              <h3 className="text-gray-600 font-bold mb-2">千葉</h3>
-              <div className="flex flex-wrap gap-2">
-                <a href="/articles/station/funabashi" className="px-4 py-2 bg-white border rounded hover:bg-blue-50">船橋</a>
-                <a href="/articles/station/kashiwa" className="px-4 py-2 bg-white border rounded hover:bg-blue-50">柏</a>
-              </div>
-            </div>
-
-            {/* その他のエリア */}
-            <div>
-              <h3 className="text-gray-600 font-bold mb-2">茨城</h3>
-              <div className="flex flex-wrap gap-2">
-                <a href="/articles/station/tsukuba" className="px-4 py-2 bg-white border rounded hover:bg-blue-50">つくば</a>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-gray-600 font-bold mb-2">栃木</h3>
-              <div className="flex flex-wrap gap-2">
-                <a href="/articles/station/utsunomiya" className="px-4 py-2 bg-white border rounded hover:bg-blue-50">宇都宮</a>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-gray-600 font-bold mb-2">静岡</h3>
-              <div className="flex flex-wrap gap-2">
-                <a href="/articles/city/hamamatsu" className="px-4 py-2 bg-white border rounded hover:bg-blue-50">浜松</a>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-gray-600 font-bold mb-2">新潟</h3>
-              <div className="flex flex-wrap gap-2">
-                <a href="/articles/pref/niigata" className="px-4 py-2 bg-white border rounded hover:bg-blue-50">新潟</a>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-gray-600 font-bold mb-2">愛知</h3>
-              <div className="flex flex-wrap gap-2">
-                <a href="/articles/city/nagoya" className="px-4 py-2 bg-white border rounded hover:bg-blue-50">名古屋</a>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-gray-600 font-bold mb-2">大阪</h3>
-              <div className="flex flex-wrap gap-2">
-                <a href="/articles/pref/osaka" className="px-4 py-2 bg-white border rounded hover:bg-blue-50">大阪</a>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-gray-600 font-bold mb-2">兵庫</h3>
-              <div className="flex flex-wrap gap-2">
-                <a href="/articles/station/himeji" className="px-4 py-2 bg-white border rounded hover:bg-blue-50">姫路</a>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-gray-600 font-bold mb-2">広島</h3>
-              <div className="flex flex-wrap gap-2">
-                <a href="/articles/pref/hiroshima" className="px-4 py-2 bg-white border rounded hover:bg-blue-50">広島</a>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-gray-600 font-bold mb-2">福岡</h3>
-              <div className="flex flex-wrap gap-2">
-                <a href="/articles/pref/fukuoka" className="px-4 py-2 bg-white border rounded hover:bg-blue-50">福岡</a>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-gray-600 font-bold mb-2">熊本</h3>
-              <div className="flex flex-wrap gap-2">
-                <a href="/articles/pref/kumamoto" className="px-4 py-2 bg-white border rounded hover:bg-blue-50">熊本</a>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-gray-600 font-bold mb-2">鹿児島</h3>
-              <div className="flex flex-wrap gap-2">
-                <a href="/articles/pref/kagoshima" className="px-4 py-2 bg-white border rounded hover:bg-blue-50">鹿児島</a>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-gray-600 font-bold mb-2">沖縄</h3>
-              <div className="flex flex-wrap gap-2">
-                <a href="/articles/pref/okinawa" className="px-4 py-2 bg-white border rounded hover:bg-blue-50">沖縄</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Search Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="text-center mb-8">
-            <p className="text-sm text-gray-500 mb-2">Search</p>
-            <h2 className="text-2xl md:text-3xl font-bold">パーソナルジムを探す</h2>
-          </div>
-
-          <div className="space-y-8">
-            {/* キーワード検索 */}
-            <div>
-              <h3 className="text-lg font-bold mb-4">キーワードで探す</h3>
+            {/* Inline Search */}
+            <div className="glass rounded-2xl p-2 max-w-2xl mx-auto">
               <div className="flex gap-2">
                 <input
                   type="text"
-                  placeholder="ジム名、キーワードを入力"
-                  className="flex-1 px-4 py-3 border rounded-lg"
+                  placeholder="ジム名・エリア・キーワード"
+                  className="flex-1 px-5 py-3.5 rounded-xl bg-white text-gray-800 text-base placeholder:text-gray-400 border-0"
                 />
-                <button className="px-6 py-3 bg-red-500 text-white rounded-lg hover:bg-red-600">
+                <button className="btn-accent text-white px-8 py-3.5 rounded-xl font-bold text-base whitespace-nowrap">
                   検索
                 </button>
               </div>
             </div>
 
+            {/* Quick stats */}
+            <div className="flex justify-center gap-8 mt-10 text-sm text-white/70">
+              <div><span className="block text-2xl font-bold text-white">1,000+</span>掲載店舗</div>
+              <div><span className="block text-2xl font-bold text-white">47</span>都道府県対応</div>
+              <div><span className="block text-2xl font-bold text-white">無料</span>カウンセリング</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Popular Area Section */}
+      <section className="py-16 md:py-20" id="area">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-10">
+            <p className="text-sm text-[var(--primary)] font-semibold tracking-widest mb-2">POPULAR AREA</p>
+            <h2 className="text-2xl md:text-3xl font-bold section-title">人気エリアのパーソナルジム特集</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {[
+              { pref: '北海道', cities: [{ name: '札幌', href: '/articles/city/sapporo' }] },
+              { pref: '宮城', cities: [{ name: '仙台', href: '/articles/city/sendai' }] },
+              { pref: '東京', cities: [
+                { name: '東京', href: '/articles/pref/tokyo' },
+                { name: '新宿', href: '/articles/station/shinjuku' },
+                { name: '銀座', href: '/articles/station/ginza' },
+                { name: '池袋', href: '/articles/station/ikebukuro' },
+                { name: '渋谷', href: '/articles/station/shibuya' },
+                { name: '恵比寿', href: '/articles/station/ebisu' },
+                { name: '五反田', href: '/articles/station/gotanda' },
+                { name: '錦糸町', href: '/articles/station/kinshicho' },
+                { name: '吉祥寺', href: '/articles/station/kichijoji' },
+                { name: '立川', href: '/articles/city/tachikawa' },
+                { name: '八王子', href: '/articles/city/hachioji' },
+              ]},
+              { pref: '神奈川', cities: [
+                { name: '横浜', href: '/articles/city/yokohama' },
+                { name: '関内', href: '/articles/station/kannai' },
+                { name: '川崎', href: '/articles/city/kawasaki' },
+                { name: '藤沢', href: '/articles/station/fujisawa' },
+              ]},
+              { pref: '埼玉', cities: [
+                { name: '大宮', href: '/articles/station/omiya' },
+                { name: '浦和', href: '/articles/station/urawa' },
+                { name: '川越', href: '/articles/station/kawagoe' },
+              ]},
+              { pref: '千葉', cities: [
+                { name: '船橋', href: '/articles/station/funabashi' },
+                { name: '柏', href: '/articles/station/kashiwa' },
+              ]},
+              { pref: '茨城', cities: [{ name: 'つくば', href: '/articles/station/tsukuba' }] },
+              { pref: '栃木', cities: [{ name: '宇都宮', href: '/articles/station/utsunomiya' }] },
+              { pref: '静岡', cities: [{ name: '浜松', href: '/articles/city/hamamatsu' }] },
+              { pref: '新潟', cities: [{ name: '新潟', href: '/articles/pref/niigata' }] },
+              { pref: '愛知', cities: [{ name: '名古屋', href: '/articles/city/nagoya' }] },
+              { pref: '大阪', cities: [{ name: '大阪', href: '/articles/pref/osaka' }] },
+              { pref: '兵庫', cities: [{ name: '姫路', href: '/articles/station/himeji' }] },
+              { pref: '広島', cities: [{ name: '広島', href: '/articles/pref/hiroshima' }] },
+              { pref: '福岡', cities: [{ name: '福岡', href: '/articles/pref/fukuoka' }] },
+              { pref: '熊本', cities: [{ name: '熊本', href: '/articles/pref/kumamoto' }] },
+              { pref: '鹿児島', cities: [{ name: '鹿児島', href: '/articles/pref/kagoshima' }] },
+              { pref: '沖縄', cities: [{ name: '沖縄', href: '/articles/pref/okinawa' }] },
+            ].map((area) => (
+              <div key={area.pref}>
+                <h3 className="text-[var(--primary)] font-bold text-sm mb-2 tracking-wide">{area.pref}</h3>
+                <div className="flex flex-wrap gap-2">
+                  {area.cities.map((city) => (
+                    <a key={city.name} href={city.href} className="area-badge px-4 py-2 rounded-lg text-sm font-medium">
+                      {city.name}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Search Section */}
+      <section className="py-16 md:py-20 bg-[var(--surface)]" id="search">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="text-center mb-10">
+            <p className="text-sm text-[var(--primary)] font-semibold tracking-widest mb-2">SEARCH</p>
+            <h2 className="text-2xl md:text-3xl font-bold section-title">パーソナルジムを探す</h2>
+          </div>
+
+          <div className="bg-[var(--surface-alt)] rounded-3xl p-8 space-y-8">
+            {/* キーワード検索 */}
+            <div>
+              <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
+                <span className="w-8 h-8 bg-[var(--primary)] text-white rounded-lg flex items-center justify-center text-sm">1</span>
+                キーワードで探す
+              </h3>
+              <div className="flex gap-3">
+                <input
+                  type="text"
+                  placeholder="ジム名、キーワードを入力"
+                  className="flex-1 px-5 py-3.5 border border-[var(--border)] rounded-xl bg-white text-base"
+                />
+                <button className="btn-accent text-white px-8 py-3.5 rounded-xl font-bold whitespace-nowrap">
+                  検索
+                </button>
+              </div>
+            </div>
+
+            <div className="border-t border-[var(--border)]" />
+
             {/* エリア検索 */}
             <div>
-              <h3 className="text-lg font-bold mb-4">エリアで探す</h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <select className="px-4 py-3 border rounded-lg">
+              <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
+                <span className="w-8 h-8 bg-[var(--primary)] text-white rounded-lg flex items-center justify-center text-sm">2</span>
+                エリアで探す
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                <select className="px-4 py-3.5 border border-[var(--border)] rounded-xl bg-white">
                   <option>都道府県を選ぶ</option>
                   <option>東京都</option>
                   <option>大阪府</option>
                   <option>神奈川県</option>
                 </select>
-                <select className="px-4 py-3 border rounded-lg" disabled>
+                <select className="px-4 py-3.5 border border-[var(--border)] rounded-xl bg-white" disabled>
                   <option>市区町村を選ぶ</option>
                 </select>
-                <select className="px-4 py-3 border rounded-lg" disabled>
+                <select className="px-4 py-3.5 border border-[var(--border)] rounded-xl bg-white" disabled>
                   <option>市区町村以降を選ぶ</option>
                 </select>
               </div>
-              <button className="mt-4 w-full px-6 py-3 bg-red-500 text-white rounded-lg hover:bg-red-600">
-                検索
+              <button className="mt-4 w-full btn-accent text-white py-3.5 rounded-xl font-bold text-base">
+                エリアで検索する
               </button>
             </div>
           </div>
@@ -230,121 +187,94 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 md:py-20" id="features">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-8">
-            <p className="text-sm text-gray-500 mb-2">Features</p>
-            <h2 className="text-2xl md:text-3xl font-bold">特徴からパーソナルジムを探す</h2>
+          <div className="text-center mb-10">
+            <p className="text-sm text-[var(--primary)] font-semibold tracking-widest mb-2">FEATURES</p>
+            <h2 className="text-2xl md:text-3xl font-bold section-title">特徴からパーソナルジムを探す</h2>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
-            <a href="/gyms/list/feature-4JsEjXzikuOX5CIA" className="block p-6 bg-white rounded-lg text-center hover:shadow-lg transition">
-              <div className="text-4xl mb-2">👩</div>
-              <p className="font-bold">女性専用</p>
-            </a>
-            <a href="/gyms/list/feature-6zdj3YfuB4n4u0Tt" className="block p-6 bg-white rounded-lg text-center hover:shadow-lg transition">
-              <div className="text-4xl mb-2">👩‍🏫</div>
-              <p className="font-bold">女性トレーナー在籍</p>
-            </a>
-            <a href="/gyms/list/feature-sGSCtxosyziST0Qi" className="block p-6 bg-white rounded-lg text-center hover:shadow-lg transition">
-              <div className="text-4xl mb-2">💳</div>
-              <p className="font-bold">月額制</p>
-            </a>
-            <a href="/gyms/list/feature-lV7bwsP4oRNlgcKh" className="block p-6 bg-white rounded-lg text-center hover:shadow-lg transition">
-              <div className="text-4xl mb-2">🍽️</div>
-              <p className="font-bold">食事指導あり</p>
-            </a>
+            {[
+              { emoji: '👩', label: '女性専用', href: '/gyms/list/feature-4JsEjXzikuOX5CIA' },
+              { emoji: '👩‍🏫', label: '女性トレーナー在籍', href: '/gyms/list/feature-6zdj3YfuB4n4u0Tt' },
+              { emoji: '💳', label: '月額制', href: '/gyms/list/feature-sGSCtxosyziST0Qi' },
+              { emoji: '🍽️', label: '食事指導あり', href: '/gyms/list/feature-lV7bwsP4oRNlgcKh' },
+            ].map((f) => (
+              <a key={f.label} href={f.href} className="card-hover bg-white rounded-2xl p-6 text-center border border-[var(--border)]">
+                <div className="text-4xl mb-3">{f.emoji}</div>
+                <p className="font-bold text-sm">{f.label}</p>
+              </a>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Tags Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 md:py-20 bg-[var(--surface)]">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-8">
-            <p className="text-sm text-gray-500 mb-2">Tag</p>
-            <h2 className="text-2xl md:text-3xl font-bold">パーソナルジムをタグから探す</h2>
+          <div className="text-center mb-10">
+            <p className="text-sm text-[var(--primary)] font-semibold tracking-widest mb-2">TAGS</p>
+            <h2 className="text-2xl md:text-3xl font-bold section-title">タグからパーソナルジムを探す</h2>
           </div>
 
-          <div className="flex flex-wrap gap-2 justify-center max-w-4xl mx-auto">
-            <a href="/gyms/list/tag-001" className="px-4 py-2 bg-gray-100 rounded-full hover:bg-gray-200">女性専用</a>
-            <a href="/gyms/list/tag-002" className="px-4 py-2 bg-gray-100 rounded-full hover:bg-gray-200">食事指導</a>
-            <a href="/gyms/list/tag-003" className="px-4 py-2 bg-gray-100 rounded-full hover:bg-gray-200">入会金不要</a>
-            <a href="/gyms/list/tag-034" className="px-4 py-2 bg-gray-100 rounded-full hover:bg-gray-200">産後ダイエット</a>
-            <a href="/gyms/list/tag-031" className="px-4 py-2 bg-gray-100 rounded-full hover:bg-gray-200">健康・体型維持</a>
-            <a href="/gyms/list/tag-025" className="px-4 py-2 bg-gray-100 rounded-full hover:bg-gray-200">ボディシェイプ</a>
-            <a href="/gyms/list/tag-024" className="px-4 py-2 bg-gray-100 rounded-full hover:bg-gray-200">筋力アップ(バルクアップ)</a>
-            <a href="/gyms/list/tag-023" className="px-4 py-2 bg-gray-100 rounded-full hover:bg-gray-200">ダイエット</a>
-            <a href="/gyms/list/tag-019" className="px-4 py-2 bg-gray-100 rounded-full hover:bg-gray-200">女性トレーナー在籍</a>
-            <a href="/gyms/list/tag-017" className="px-4 py-2 bg-gray-100 rounded-full hover:bg-gray-200">子連れOK</a>
-            <a href="/gyms/list/tag-014" className="px-4 py-2 bg-gray-100 rounded-full hover:bg-gray-200">手ぶらOK</a>
-            <a href="/gyms/list/tag-012" className="px-4 py-2 bg-gray-100 rounded-full hover:bg-gray-200">シャワー</a>
-            <a href="/gyms/list/tag-010" className="px-4 py-2 bg-gray-100 rounded-full hover:bg-gray-200">完全個室</a>
-            <a href="/gyms/list/tag-009" className="px-4 py-2 bg-gray-100 rounded-full hover:bg-gray-200">月額制</a>
-            <a href="/gyms/list/tag-007" className="px-4 py-2 bg-gray-100 rounded-full hover:bg-gray-200">トライアルプラン</a>
+          <div className="flex flex-wrap gap-2.5 justify-center max-w-4xl mx-auto">
+            {[
+              { label: '女性専用', href: '/gyms/list/tag-001' },
+              { label: '食事指導', href: '/gyms/list/tag-002' },
+              { label: '入会金不要', href: '/gyms/list/tag-003' },
+              { label: '産後ダイエット', href: '/gyms/list/tag-034' },
+              { label: '健康・体型維持', href: '/gyms/list/tag-031' },
+              { label: 'ボディシェイプ', href: '/gyms/list/tag-025' },
+              { label: '筋力アップ(バルクアップ)', href: '/gyms/list/tag-024' },
+              { label: 'ダイエット', href: '/gyms/list/tag-023' },
+              { label: '女性トレーナー在籍', href: '/gyms/list/tag-019' },
+              { label: '子連れOK', href: '/gyms/list/tag-017' },
+              { label: '手ぶらOK', href: '/gyms/list/tag-014' },
+              { label: 'シャワー', href: '/gyms/list/tag-012' },
+              { label: '完全個室', href: '/gyms/list/tag-010' },
+              { label: '月額制', href: '/gyms/list/tag-009' },
+              { label: 'トライアルプラン', href: '/gyms/list/tag-007' },
+            ].map((tag) => (
+              <a key={tag.label} href={tag.href} className="tag-pill px-4 py-2 rounded-full text-sm font-medium bg-white text-[var(--text-muted)]">
+                {tag.label}
+              </a>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Articles Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 md:py-20" id="articles">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-8">
-            <p className="text-sm text-gray-500 mb-2">The Latest Articles</p>
-            <h2 className="text-2xl md:text-3xl font-bold">パーソナルジム新着記事</h2>
+          <div className="text-center mb-10">
+            <p className="text-sm text-[var(--primary)] font-semibold tracking-widest mb-2">THE LATEST ARTICLES</p>
+            <h2 className="text-2xl md:text-3xl font-bold section-title">パーソナルジム新着記事</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            <article className="bg-white rounded-lg overflow-hidden shadow hover:shadow-lg transition">
-              <div className="p-6">
-                <p className="text-sm text-blue-500 mb-2">ブランド別 厳選ジムまとめ</p>
-                <h3 className="font-bold mb-2">
-                  <a href="/articles/brand/katagirijuku" className="hover:text-blue-500">
-                    【2026年最新】かたぎり塾の料金や月額費は？口コミや体験談も徹底分析
-                  </a>
-                </h3>
-                <p className="text-sm text-gray-600 mb-4">
-                  かたぎり塾は、完全個室でマンツーマン指導をおこなうパーソナルジム...
-                </p>
-                <p className="text-sm text-gray-400">2026.03.16</p>
-              </div>
-            </article>
-
-            <article className="bg-white rounded-lg overflow-hidden shadow hover:shadow-lg transition">
-              <div className="p-6">
-                <p className="text-sm text-blue-500 mb-2">エリア別 厳選ジムまとめ</p>
-                <h3 className="font-bold mb-2">
-                  <a href="/articles/city/takamatsu" className="hover:text-blue-500">
-                    【2026年最新】パーソナルジム高松おすすめ12選！人気のジムを徹底比較
-                  </a>
-                </h3>
-                <p className="text-sm text-gray-600 mb-4">
-                  自分に合ったパーソナルジムを見つけるのは、思っている以上に難しいもの...
-                </p>
-                <p className="text-sm text-gray-400">2026.03.04</p>
-              </div>
-            </article>
-
-            <article className="bg-white rounded-lg overflow-hidden shadow hover:shadow-lg transition">
-              <div className="p-6">
-                <p className="text-sm text-blue-500 mb-2">エリア別 厳選ジムまとめ</p>
-                <h3 className="font-bold mb-2">
-                  <a href="/articles/pref/toyama" className="hover:text-blue-500">
-                    【2026年最新】パーソナルジム富山おすすめ20選！人気のジムを徹底比較
-                  </a>
-                </h3>
-                <p className="text-sm text-gray-600 mb-4">
-                  自分に合ったパーソナルジムを見つけるのは、思っている以上に難しいもの...
-                </p>
-                <p className="text-sm text-gray-400">2026.03.04</p>
-              </div>
-            </article>
+            {[
+              { cat: 'ブランド別 厳選ジムまとめ', title: '【2026年最新】かたぎり塾の料金や月額費は？口コミや体験談も徹底分析', desc: 'かたぎり塾は、完全個室でマンツーマン指導をおこなうパーソナルジム...', date: '2026.03.16', href: '/articles/brand/katagirijuku' },
+              { cat: 'エリア別 厳選ジムまとめ', title: '【2026年最新】パーソナルジム高松おすすめ12選！人気のジムを徹底比較', desc: '自分に合ったパーソナルジムを見つけるのは、思っている以上に難しいもの...', date: '2026.03.04', href: '/articles/city/takamatsu' },
+              { cat: 'エリア別 厳選ジムまとめ', title: '【2026年最新】パーソナルジム富山おすすめ20選！人気のジムを徹底比較', desc: '自分に合ったパーソナルジムを見つけるのは、思っている以上に難しいもの...', date: '2026.03.04', href: '/articles/pref/toyama' },
+            ].map((article, i) => (
+              <article key={i} className="card-hover bg-white rounded-2xl overflow-hidden border border-[var(--border)]">
+                <div className="p-6">
+                  <span className="inline-block text-xs font-semibold text-[var(--primary)] bg-blue-50 px-3 py-1 rounded-full mb-3">{article.cat}</span>
+                  <h3 className="font-bold mb-2 leading-snug">
+                    <a href={article.href} className="hover:text-[var(--primary)] transition-colors">{article.title}</a>
+                  </h3>
+                  <p className="text-sm text-[var(--text-muted)] mb-4 leading-relaxed">{article.desc}</p>
+                  <time className="text-xs text-[var(--text-secondary)]">{article.date}</time>
+                </div>
+              </article>
+            ))}
           </div>
 
-          <div className="text-center mt-8">
-            <a href="/search?category=feature" className="inline-flex items-center px-6 py-3 border-2 border-gray-300 rounded-lg hover:border-blue-500">
+          <div className="text-center mt-10">
+            <a href="/search?category=feature" className="inline-flex items-center gap-2 px-6 py-3 border-2 border-[var(--border)] rounded-full hover:border-[var(--primary)] hover:text-[var(--primary)] transition-all font-medium text-sm">
               その他関連記事はこちら
-              <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </a>
@@ -353,28 +283,29 @@ export default function Home() {
       </section>
 
       {/* News Section */}
-      <section className="py-16 bg-blue-500 text-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-8">
-            <p className="text-sm mb-2">News</p>
-            <h2 className="text-2xl md:text-3xl font-bold">最新ニュース</h2>
+      <section className="py-16 md:py-20 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #1E3A8A 0%, #2563EB 100%)' }}>
+        <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(circle at 50% 50%, white 0%, transparent 60%)' }} />
+        <div className="relative container mx-auto px-4">
+          <div className="text-center mb-10">
+            <p className="text-sm text-blue-200 font-semibold tracking-widest mb-2">NEWS</p>
+            <h2 className="text-2xl md:text-3xl font-bold text-white">最新ニュース</h2>
           </div>
 
           <div className="max-w-2xl mx-auto">
-            <div className="bg-white text-gray-900 p-6 rounded-lg">
-              <div className="flex items-center gap-4 mb-2">
-                <time className="text-sm text-gray-500">2025.11.20</time>
-                <span className="text-sm text-blue-500">ニュース</span>
+            <div className="bg-white rounded-2xl p-6 card-hover">
+              <div className="flex items-center gap-3 mb-2">
+                <time className="text-sm text-[var(--text-secondary)]">2025.11.20</time>
+                <span className="text-xs font-semibold text-[var(--primary)] bg-blue-50 px-3 py-1 rounded-full">ニュース</span>
               </div>
-              <a href="/news/website-launch" className="font-bold hover:text-blue-500">
+              <a href="/news/website-launch" className="font-bold hover:text-[var(--primary)] transition-colors">
                 WEBサイト開設のお知らせ
               </a>
             </div>
 
             <div className="text-center mt-6">
-              <a href="/news" className="inline-flex items-center text-white hover:underline">
+              <a href="/news" className="inline-flex items-center gap-2 text-white hover:text-blue-200 transition-colors text-sm">
                 ニュース一覧
-                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </a>
@@ -383,36 +314,31 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PR Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-400 to-blue-500 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-sm mb-2">PR</p>
-          <h2 className="text-2xl md:text-3xl font-bold mb-6">パーソナルジムの無料掲載依頼</h2>
-          
-          <div className="max-w-2xl mx-auto">
-            <p className="mb-4">
-              パーソナルジムの掲載は無料です。掲載希望の連絡をお待ちしています。
-              新規掲載をご希望の企業様はこちらより詳細を確認のうえ、
-              まずはお気軽にご連絡くださいませ。
+      {/* PR / CTA Section */}
+      <section className="py-16 md:py-20 bg-[var(--surface-alt)]">
+        <div className="container mx-auto px-4 text-center max-w-3xl">
+          <div className="bg-white rounded-3xl p-10 border border-[var(--border)] card-hover">
+            <p className="text-sm text-[var(--primary)] font-semibold tracking-widest mb-2">FOR GYM OWNERS</p>
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">パーソナルジムの無料掲載依頼</h2>
+            <p className="text-[var(--text-muted)] mb-8 leading-relaxed">
+              パーソナルジムの掲載は無料です。掲載希望の連絡をお待ちしています。<br />
+              新規掲載をご希望の企業様はこちらより詳細を確認のうえ、まずはお気軽にご連絡くださいませ。
             </p>
 
-            <p className="text-xl font-bold mb-6">パーソナルジムの比較・口コミ・予約サイト</p>
-
-            <div className="space-y-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLSd2cWgzmTOvbmfPs2bLd-H-yUQZqxt4fY46GK49p49uh50y7w/viewform"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block px-8 py-3 bg-red-500 text-white rounded-lg hover:bg-red-600 font-bold"
+                className="btn-primary text-white px-8 py-4 rounded-full font-bold text-base"
               >
                 掲載依頼をする
               </a>
-              <br />
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLSd2cWgzmTOvbmfPs2bLd-H-yUQZqxt4fY46GK49p49uh50y7w/viewform"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block px-8 py-3 bg-white text-blue-500 rounded-lg hover:bg-gray-100 font-bold"
+                className="px-8 py-4 rounded-full font-bold text-base border-2 border-[var(--primary)] text-[var(--primary)] hover:bg-blue-50 transition-colors"
               >
                 さっそく無料掲載してみる
               </a>
@@ -422,34 +348,31 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
+      <footer className="bg-[#0F172A] text-gray-400 py-12">
         <div className="container mx-auto px-4">
+          <div className="text-center mb-8">
+            <span className="text-2xl font-bold text-gradient">BEST-FIT</span>
+            <p className="text-sm mt-2">パーソナルジムの比較・口コミ・予約サイト</p>
+          </div>
           <nav className="mb-8">
-            <ul className="flex flex-wrap justify-center gap-6">
+            <ul className="flex flex-wrap justify-center gap-6 text-sm">
               <li>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdpbl1o2Z3KfYwgvfWaPGAlW9swhOnKYmVq080AWe0qQVXUUA/viewform" className="hover:text-blue-400" target="_blank" rel="noopener noreferrer">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdpbl1o2Z3KfYwgvfWaPGAlW9swhOnKYmVq080AWe0qQVXUUA/viewform" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">
                   お問い合わせ
                 </a>
               </li>
               <li>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSd2cWgzmTOvbmfPs2bLd-H-yUQZqxt4fY46GK49p49uh50y7w/viewform" className="hover:text-blue-400" target="_blank" rel="noopener noreferrer">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSd2cWgzmTOvbmfPs2bLd-H-yUQZqxt4fY46GK49p49uh50y7w/viewform" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">
                   掲載ご希望のジムはこちら
                 </a>
               </li>
-              <li>
-                <a href="/terms-of-service" className="hover:text-blue-400">利用規約</a>
-              </li>
-              <li>
-                <a href="/privacy-policy" className="hover:text-blue-400">プライバシーポリシー</a>
-              </li>
-              <li>
-                <a href="/content-policy" className="hover:text-blue-400">記事の制作ポリシー</a>
-              </li>
+              <li><a href="/terms-of-service" className="hover:text-white transition-colors">利用規約</a></li>
+              <li><a href="/privacy-policy" className="hover:text-white transition-colors">プライバシーポリシー</a></li>
+              <li><a href="/content-policy" className="hover:text-white transition-colors">記事の制作ポリシー</a></li>
             </ul>
           </nav>
-
-          <div className="text-center text-gray-400 text-sm">
-            ©BEST-FIT. all Rights Reserved.
+          <div className="border-t border-gray-800 pt-6 text-center text-sm">
+            <p>&copy; 2026 BEST-FIT. All Rights Reserved.</p>
           </div>
         </div>
       </footer>

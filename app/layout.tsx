@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import { Noto_Sans_JP } from "next/font/google";
+import { Zen_Kaku_Gothic_New } from "next/font/google";
 import "./globals.css";
 
-// 日本語フォント最適化
-const notoSansJP = Noto_Sans_JP({
+const zenKaku = Zen_Kaku_Gothic_New({
   weight: ['400', '500', '700'],
   subsets: ['latin'],
   display: 'swap',
@@ -47,7 +46,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body className={`${notoSansJP.variable} antialiased`}>
+      <head>
+        <meta httpEquiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta httpEquiv="Pragma" content="no-cache" />
+        <meta httpEquiv="Expires" content="0" />
+      </head>
+      <body className={`${zenKaku.variable} antialiased`}>
         {children}
       </body>
     </html>

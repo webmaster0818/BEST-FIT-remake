@@ -1,19 +1,112 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #FAFBFD;
+  --foreground: #1A1D23;
+  --primary: #2563EB;
+  --primary-light: #3B82F6;
+  --primary-dark: #1D4ED8;
+  --accent: #EF4444;
+  --accent-hover: #DC2626;
+  --surface: #FFFFFF;
+  --surface-alt: #F1F5F9;
+  --border: #E2E8F0;
+  --text-muted: #64748B;
+  --text-secondary: #94A3B8;
+  --gradient-start: #2563EB;
+  --gradient-end: #7C3AED;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-noto-sans-jp), Arial, Helvetica, sans-serif;
+  font-family: var(--font-noto-sans-jp), -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Glass morphism */
+.glass {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Gradient text */
+.text-gradient {
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Hover card lift */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(37, 99, 235, 0.12);
+}
+
+/* Primary button glow */
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  transition: all 0.3s ease;
+}
+.btn-primary:hover {
+  box-shadow: 0 8px 30px rgba(37, 99, 235, 0.35);
+  transform: translateY(-1px);
+}
+
+/* Accent button */
+.btn-accent {
+  background: linear-gradient(135deg, var(--accent), #F97316);
+  transition: all 0.3s ease;
+}
+.btn-accent:hover {
+  box-shadow: 0 8px 30px rgba(239, 68, 68, 0.35);
+  transform: translateY(-1px);
+}
+
+/* Tag pill */
+.tag-pill {
+  transition: all 0.2s ease;
+  border: 1px solid var(--border);
+}
+.tag-pill:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: rgba(37, 99, 235, 0.05);
+}
+
+/* Section fade-in effect placeholder */
+.section-title::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--gradient-end));
+  border-radius: 2px;
+  margin: 12px auto 0;
+}
+
+/* Smooth input focus */
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Area badge */
+.area-badge {
+  transition: all 0.2s ease;
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+.area-badge:hover {
+  border-color: var(--primary);
+  background: rgba(37, 99, 235, 0.04);
+  color: var(--primary);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.08);
 }
